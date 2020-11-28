@@ -3,12 +3,14 @@ import ValueContext from './ValueContext';
 
 
 function Child(props) {
-    let value = useContext(ValueContext)
-    return (
+    let value = useContext(ValueContext);
+       return (
         <div>
-            {props.num}
+            {/* {props.num} */}
+            {/* Child  ValueContext: {value} */}
             <br/>
-            ValueContext: {value}
+          Child  ValueContext: {value[0]}
+          <button onClick={() => {value[1](++value[0])}}>update value</button>
         </div>
     );
 }
